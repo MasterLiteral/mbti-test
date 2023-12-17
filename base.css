@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    margin: 5px;
+    background-color: blue;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn-gray {
+    background-color: lightgray;
+    color: black;
+}
