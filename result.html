@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./base.css">
+</head>
+<body>
+    <script>
+        const q = (()=>{
+            var a = window.location.search.substr(1).split('&');
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })()
+        let mbti = ''
+        mbti += Number(q.E) > Number(q.I)? 'E' :'I'
+        mbti += Number(q.N) > Number(q.S)? 'N' :'S'
+        mbti += Number(q.T) > Number(q.F)? 'T' :'F'
+        mbti += Number(q.P) > Number(q.J)? 'P' :'J'
+        document.write(`<h1>당신의 MBTI는 ${mbti}입니다.</h1>`)
+    </script>
+</body>
+</html>
